@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/product_image"
         app:layout_constraintRight_toLeftOf="@+id/new_mini"
-        app:layout_constraintBottom_toTopOf="product_name"
+        app:layout_constraintBottom_toTopOf="@+id/product_name"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"/>
 
@@ -56,8 +56,8 @@
         android:layout_marginTop="6dp"
         android:gravity="left"
         android:text="여성 엘칸토 로퍼 250"
-        app:layout_constraintTop_toBottomOf="@id/cer_mini"
-        app:layout_constraintLeft_toRightOf="@id/product_image"
+        app:layout_constraintTop_toBottomOf="@+id/cer_mini"
+        app:layout_constraintLeft_toRightOf="@+id/product_image"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/price"
 
@@ -73,8 +73,8 @@
         android:layout_marginTop="3dp"
         android:layout_marginLeft="11dp"
         android:text="45,000원"
-        app:layout_constraintTop_toBottomOf="@id/product_name"
-        app:layout_constraintLeft_toRightOf="@id/product_image"
+        app:layout_constraintTop_toBottomOf="@+id/product_name"
+        app:layout_constraintLeft_toRightOf="@+id/product_image"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"/>

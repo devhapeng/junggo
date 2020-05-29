@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="2.5dp"
             android:layout_marginTop="23dp"
-            android:background="#ff0000"
-            app:layout_constraintBottom_toTopOf="@id/bestseller"
+            android:background="#f5f5f5"
+            app:layout_constraintBottom_toTopOf="@+id/bestseller"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
@@ -33,11 +33,12 @@
             android:text="인기 셀러"
             android:textColor="#333333"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/bestview"
+            app:layout_constraintBottom_toTopOf="@+id/bestview"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/allviewer"
-            app:layout_constraintTop_toBottomOf="@id/line1" />
+            app:layout_constraintRight_toLeftOf="@+id/allviewer"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            android:layout_marginStart="22dp" />
 
         <ImageView
             android:id="@+id/allviewer"
@@ -47,22 +48,26 @@
             android:layout_marginRight="18dp"
             android:layout_marginBottom="2dp"
             android:src="@drawable/search_btn_all"
-            app:layout_constraintBottom_toTopOf="@id/bestview"
-            app:layout_constraintLeft_toRightOf="@id/bestseller"
+            app:layout_constraintBottom_toTopOf="@+id/bestview"
+            app:layout_constraintLeft_toRightOf="@+id/bestseller"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line1" />
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bestview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/line2"
+            android:layout_marginHorizontal="14dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bestseller" />
+            app:layout_constraintTop_toBottomOf="@+id/bestseller"
+            tools:listitem="@layout/item_best"/>
 
 
         <View
@@ -70,9 +75,10 @@
             android:layout_width="match_parent"
             android:layout_height="2.5dp"
             android:layout_marginBottom="16.5dp"
-            android:background="#ff0000"
-            app:layout_constraintBottom_toTopOf="@id/pick"
-            app:layout_constraintTop_toBottomOf="@id/bestview" />
+            android:layout_marginTop="18dp"
+            android:background="#f5f5f5"
+            app:layout_constraintBottom_toTopOf="@+id/pick"
+            app:layout_constraintTop_toBottomOf="@+id/bestview" />
 
         <TextView
             android:id="@+id/pick"
@@ -84,11 +90,11 @@
             android:text="이건 꼭 사야해"
             android:textColor="#333333"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/certification"
+            app:layout_constraintBottom_toTopOf="@+id/certification"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line2" />
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
 
         <ImageView
             android:id="@+id/certification"
@@ -104,7 +110,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/star_5"
-            app:layout_constraintTop_toBottomOf="@id/pick" />
+            app:layout_constraintTop_toBottomOf="@+id/pick" />
 
         <ImageView
             android:id="@+id/star_5"
@@ -113,11 +119,11 @@
             android:layout_marginRight="7dp"
             android:src="@drawable/search_btn_5_star_non"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="@id/certification"
+            app:layout_constraintBottom_toBottomOf="@+id/certification"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@+id/certification"
             app:layout_constraintRight_toLeftOf="@+id/notopen"
-            app:layout_constraintTop_toTopOf="@id/certification" />
+            app:layout_constraintTop_toTopOf="@+id/certification" />
 
         <ImageView
             android:id="@+id/notopen"
@@ -126,22 +132,24 @@
             android:layout_marginRight="76dp"
             android:src="@drawable/search_btn_notopen_non"
             android:background="#00000000"
-            app:layout_constraintBottom_toBottomOf="@id/certification"
+            app:layout_constraintBottom_toBottomOf="@+id/certification"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@+id/star_5"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/certification" />
+            app:layout_constraintTop_toTopOf="@+id/certification" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/certification"
+            app:layout_constraintTop_toBottomOf="@+id/certification"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constarintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            tools:listitem="@layout/item_must"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
